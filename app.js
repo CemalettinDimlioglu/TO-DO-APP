@@ -4,6 +4,7 @@ const input = document.querySelector("#input")
 const button = document.querySelector("#button")
 
 button.addEventListener("click", (e)=>{
+     e.preventDefault()
    if (input.value.trim()===""){
      alert("please enter new to do text!");
      return;
