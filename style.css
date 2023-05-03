@@ -5,10 +5,18 @@
 }
 
 body{
+     text-align: center;
 }
 .container{
+     background-color: blueviolet;
      display: flex;
      justify-content: center;
-     align-items: center;
+
+      
      
+}
+.item{
+
+
+
 }
