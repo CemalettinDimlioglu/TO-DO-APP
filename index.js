@@ -1,8 +1,7 @@
-const todoInput = document.getElementsById("todo-input");
+const todoInput = document.getElementById("todo-input");
 const addBtn = document.querySelector("#todo-button");
 const todoUl = document.querySelector("#todo-ul");
-let todoList =[];
-
+let todoList = [];
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (todoInput.value.trim() === "") {
@@ -15,28 +14,26 @@ addBtn.addEventListener("click", (e) => {
       text: todoInput.value,
     };
     todoList.push(newTodo);
-
+    createTodo(newTodo);
   }
 });
-
-const createTodo = (newTodo)=>{
-  const {id, completed,text} = newTodo
-  const li = document.createElement("li")
-
-  li.setAttribute("id",id);
-
+const createTodo = (newTodo) => {
+  const { id, completed, text } = newTodo;
+  const li = document.createElement("li");
+  li.setAttribute("id", id);
   completed ? li.classList.add("checked") : "";
-
-  const icon = documant.createElement("i");
-  icon.setAttribute("class","fas fa check");
+  const icon = document.createElement("i");
+  icon.setAttribute("class", "fas fa-check");
   li.appendChild(icon);
-
   const p = document.createElement("p");
-  p.innerText = text
-
+  p.innerText = text;
   li.appendChild(p);
   const removeIcon = document.createElement("i");
-
-  removeIcon.setAttribute("class","fas fa-trash")
+  removeIcon.setAttribute("class", "fas fa-trash");
   li.append(removeIcon);
-}
+  todoUl.prepend(li);
+};
+
+todoUl.addEventListener("click",(e)=>{
+  const idAttr =e.target.classList.contains("li").getAttribute
+})
