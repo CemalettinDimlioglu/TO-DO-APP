@@ -18,3 +18,14 @@ addBtn.addEventListener("click", (e) => {
 
   }
 });
+
+const createTodo = (newTodo)=>{
+  const li = document.createElement("li")
+
+  li.setAttribute("id",id);
+
+  completed ? li.classList.add("checked") : "";
+
+  const icon = documant.createElement("i");
+  icon.setAttribute("class","fas fa check")
+}
