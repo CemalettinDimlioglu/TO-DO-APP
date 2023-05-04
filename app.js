@@ -20,6 +20,7 @@ addBtn.addEventListener("click", (e) => {
 });
 
 const createTodo = (newTodo)=>{
+  const {id, completed,text} = newTodo
   const li = document.createElement("li")
 
   li.setAttribute("id",id);
@@ -27,5 +28,15 @@ const createTodo = (newTodo)=>{
   completed ? li.classList.add("checked") : "";
 
   const icon = documant.createElement("i");
-  icon.setAttribute("class","fas fa check")
+  icon.setAttribute("class","fas fa check");
+  li.appendChild(icon);
+
+  const p = document.createElement("p");
+  p.innerText = text
+
+  li.appendChild(p);
+  const removeIcon = document.createElement("i");
+
+  removeIcon.setAttribute("class","fas fa-trash")
+  li.append(removeIcon);
 }
